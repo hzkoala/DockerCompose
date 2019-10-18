@@ -1,0 +1,12 @@
+version: '3'
+services:
+  zabbix-agent:
+    container_name: zabbix-agent
+    image: zabbix/zabbix-agent
+    networks:
+      - 'dev'
+    environment:
+      ZBX_SERVER_HOST: 127.0.0.1
+networks:
+  dev:
+    external: true

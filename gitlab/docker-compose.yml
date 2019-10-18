@@ -1,0 +1,21 @@
+version: '3'
+services:
+  gitlab:
+    container_name: gitlab
+    image: gitlab/gitlab-ce:latest
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      #- '22:22'
+      #- '80:80'
+      #- '443:443'
+      - '2222:22'
+      - '8080:80'
+      - '8443:443'
+    volumes:
+      - '/etc/gitlab:/etc/gitlab'
+      - '/home/docker/gitlab:/var/opt/gitlab'
+networks:
+  dev:
+    external: true

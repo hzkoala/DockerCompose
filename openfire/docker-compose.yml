@@ -1,0 +1,30 @@
+version: '3'
+services:
+  openfire:
+    container_name: openfire
+    image: 'gizmotronic/openfire:4.3.2'
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - '3478:3478'
+      - '3479:3479'
+      - '5222:5222'
+      - '5223:5223'
+      - '5229:5229'
+      - '5262:5262'
+      - '5263:5263'
+      - '5269:5269'
+      - '5270:5270'
+      - '5275:5275'
+      - '5276:5276'
+      - '7070:7070'
+      - '7443:7443'
+      - '7777:7777'
+      - '9090:9090'
+      - '9091:9091'
+    volumes:
+      - '/home/docker/openfire:/var/lib/openfire'
+networks:
+  dev:
+    external: true

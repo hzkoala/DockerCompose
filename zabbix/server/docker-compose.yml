@@ -1,0 +1,16 @@
+version: '3'
+services:
+  zabbix-server:
+    container_name: zabbix-server-mysql
+    image: zabbix/zabbix-server-mysql
+    networks:
+      - 'dev'
+    environment:
+      DB_SERVER_HOST: 127.0.0.1
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbix
+      MYSQL_ROOT_PASSWORD: root
+networks:
+  dev:
+    external: true

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  yapi:
+    container_name: yapi
+    image: jayfong/yapi
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - 3000:3000
+    volumes:
+      - ./config.js:/yapi/config.js
+networks:
+  dev:
+    external: true

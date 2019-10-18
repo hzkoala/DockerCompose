@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins
+    restart: always
+    network:
+      - 'dev'
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+    volumes:
+      - '/home/docker/jenkins:/var/jenkins_home'
+networks:
+  dev:
+    external: true
