@@ -20,7 +20,7 @@ services:
       #- '11211:11211'
       #- '27017:27017'
     volumes:
-      #- '/home/docker/baota/wwwroot:/www/wwwroot'
+      - '/home/docker/baota/wwwroot:/www/wwwroot'
       - '/home/docker/baota:/www'
     shm_size: '1g'
 networks:
