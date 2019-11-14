@@ -10,15 +10,8 @@ services:
         aliases:
           - mysql
     ports:
-      - '21:21'
-      - '80:80'
       - '888:888'
       - '8888:8888'
-      - '443:443'
-      - '3306:3306'
-      #- '6379:6379'
-      #- '11211:11211'
-      #- '27017:27017'
     volumes:
       - '/home/docker/baota/wwwroot:/www/wwwroot'
     shm_size: '1g'
