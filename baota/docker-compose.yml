@@ -3,7 +3,6 @@ services:
   baota:
     container_name: baota
     image: pch18/baota
-    privileged: true
     restart: always
     networks:
       dev:
