@@ -11,8 +11,9 @@ services:
     ports:
       - '888:888'
       - '8888:8888'
-    volumes:
-      - '/home/docker/baota/wwwroot:/www/wwwroot'
+#    volumes:
+#      - '/home/docker/baota:/www'
+#      - '/home/docker/baota/wwwroot:/www/wwwroot'
     shm_size: '1g'
 networks:
   dev:
