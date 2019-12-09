@@ -7,7 +7,9 @@ services:
     networks:
       - 'dev'
     ports:
-      - '2222:22'
+      - '1022:22'
+      - '1080:80'
+      - '1443:443'
     volumes:
       - '/etc/gitlab:/etc/gitlab'
       - '/home/docker/gitlab:/var/opt/gitlab'
