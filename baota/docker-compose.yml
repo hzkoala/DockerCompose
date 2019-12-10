@@ -4,6 +4,7 @@ services:
     container_name: baota
     image: pch18/baota
     restart: always
+    privileged: true
     networks:
       dev:
         aliases:
