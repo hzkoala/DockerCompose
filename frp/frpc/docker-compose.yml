@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  frpc:
+    container_name: frpc
+    image: psnowdreamtech/frpc
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - '7400:7400'
+    volumes:
+      - '/etc/frp/frpc.ini:/etc/frp/frpc.ini'
+networks:
+  dev:
+    external: true

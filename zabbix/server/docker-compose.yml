@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 services:
   zabbix-server:
     container_name: zabbix-server-mysql

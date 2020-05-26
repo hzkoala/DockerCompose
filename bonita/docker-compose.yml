@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  bonita:
+    container_name: bonita
+    image: bonita
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - '8001:8080'
+    volumes:
+      - '/home/docker/bonita:/opt/bonita'
+    environment:
+      - DB_VENDOR=mysql
+      - DB_HOST=baota
+      - DB_PORT=3306
+      - DB_NAME=bonitadb
+      - DB_USER=bonitauser
+      - DB_PASS=bonitapass
+      - BIZ_DB_NAME=businessdb
+      - BIZ_DB_USER=businessuser
+      - BIZ_DB_PASS=businesspass
+      - DB_ADMIN_USER=root
+      - DB_ADMIN_PASS=root
+networks:
+  dev:
+    external: true
