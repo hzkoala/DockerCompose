@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 services:
   baota:
     container_name: baota
@@ -10,8 +10,10 @@ services:
         aliases:
           - mysql
     ports:
+      - '80:80'
       - '888:888'
       - '8888:8888'
+      - '443:443'
 #    volumes:
 #      - '/home/docker/baota:/www'
 #      - '/home/docker/baota/wwwroot:/www/wwwroot'
