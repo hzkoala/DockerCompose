@@ -1,0 +1,52 @@
+version: '3.3'
+services:
+  mcms:
+    container_name: mcms
+    image: mingsoft/java
+    restart: always
+    volumes:
+      - '/home/docker/mcms/app/target:/home'
+    networks:
+      - dev
+    ports:
+      - '8080:8080'
+    depends_on:
+      - mysql8
+      - nginx
+    command: java -jar ms-mcms.jar
+
+  mysql8:
+    container_name: mysql8
+    image: mysql:8
+    restart: always
+    networks:
+      - dev
+    ports:
+      - '3306:3306'
+    volumes:
+      - '/home/docker/mysql/data:/var/lib/mysql'
+      - '/home/docker/mysql/conf/mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
+      #- 'mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=root
+    privileged: true
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    restart: always
+    networks:
+      - dev
+    ports:
+      - '80:80'
+    volumes:
+      - '/home/docker/mcms/app/target:/app'
+      - '/home/docker/nginx/logs:/etc/nginx/logs'
+      - '/home/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf'
+      #- 'nginx.conf:/etc/nginx/nginx.conf'
+    privileged: true
+
+networks:
+  dev:
+    external: true
