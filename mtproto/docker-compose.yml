@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  mtproto-proxy:
+    container_name: mtproto
+    image: seriyps/mtproto-proxy
+    network_mode: host
+    environment:
+      - MTP_PORT=4443
+      - MTP_SECRET=a0b3b205dca8b9e8b6a210c5163ef9f0
+      - MTP_TAG=2844cad8fa4da63a5d236cb3f85c08cf
