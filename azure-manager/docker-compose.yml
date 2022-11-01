@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  azure-manager:
+    container_name: azure-manager
+    image: 1injex/azure-manager
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - '8888:8888'
+networks:
+  dev:
+    external: true
