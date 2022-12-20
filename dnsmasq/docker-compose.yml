@@ -11,7 +11,7 @@ services:
       - '53/udp:53/udp'
       - '8083:8080'
     volumes:
-      - '/etc/dnsmasq.conf:/etc/dnsmasq.conf'
+      - './dnsmasq.conf:/etc/dnsmasq.conf'
     environment:
       - HTTP_USER=hzkoala
       - HTTP_PASS=hz1989315

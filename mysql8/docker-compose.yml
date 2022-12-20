@@ -8,8 +8,8 @@ services:
       - 'dev'
     volumes:
       - '/home/docker/mysql/data:/var/lib/mysql'
-      - '/home/docker/mysql/conf/mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
-      #- 'mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
+      #- '/home/docker/mysql/conf/mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
+      - './mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
     environment:
       - TZ=Asia/Shanghai
       - MYSQL_ROOT_PASSWORD=root
