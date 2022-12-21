@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  clash:
+    container_name: clash
+    image: dreamacro/clash
+    restart: always
+    network_mode: "host"
+    volumes:
+      - './config.yaml:/root/.config/clash/config.yaml'
+
+  yacd:
+    container_name: yacd
+    image: haishanh/yacd
+    restart: always
+    networks:
+      - 'dev'
+    ports: 
+      - '7892:80'
+
+networks:
+  dev:
+    external: true
