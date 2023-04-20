@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  wallabag:
+    container_name: wallabag
+    image: wallabag/wallabag
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - '88:80'
+    volumes:
+      - '/home/docker/wallabag/data:/var/www/wallabag/data'
+      - '/home/docker/wallabag/images:/var/www/wallabag/web/assets/images'
+    environment:
+      - 'SYMFONY__ENV__DOMAIN_NAME=http://localhost:88'
+      #- 'SYMFONY__ENV__DOMAIN_NAME=http://192.168.33.10:88'
+      #- 'SYMFONY__ENV__DOMAIN_NAME=http://wallabag.tool.dotink.cc'
+networks:
+  dev:
+    external: true
