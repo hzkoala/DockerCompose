@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  apitable:
+    container_name: apitable
+    image: 'apitable/all-in-one:latest'
+    restart: always
+    volumes:
+      - '/home/docker/apitable:/apitable'
+    networks:
+      - 'dev'
+    ports:
+      - '8880:80'
+networks:
+  dev:
+    external: true
