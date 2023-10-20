@@ -2,7 +2,7 @@ version: '3.3'
 services:
   frps:
     container_name: frps
-    image: snowdreamtech/frps
+    image: snowdreamtech/frps:0.51.3
     restart: always
     network_mode: host
     volumes:
