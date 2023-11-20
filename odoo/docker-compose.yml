@@ -1,0 +1,48 @@
+version: '3.1'
+services:
+  web:
+    image: odoo:16.0
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+      - "50162:50162"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      #- ./addons:/mnt/extra-addons
+      - /home/docker/odoo/packages:/usr/lib/python3/dist-packages/odoo
+    networks:
+      - 'dev'
+    environment:
+      - PASSWORD_FILE=/run/secrets/postgresql_password
+    secrets:
+      - postgresql_password
+      
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    networks:
+      - 'dev'
+    secrets:
+      - postgresql_password
+      
+volumes:
+  odoo-web-data:
+  odoo-db-data:
+
+networks:
+  dev:
+    external: true
+    
+secrets:
+  postgresql_password:
+    file: odoo_pg_pass
