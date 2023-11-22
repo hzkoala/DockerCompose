@@ -1,7 +1,6 @@
 version: '3.3'
 services:
-  yapi:
-    container_name: yapi
+  web:
     image: jayfong/yapi
     restart: always
     networks:
@@ -10,6 +9,22 @@ services:
       - 3000:3000
     volumes:
       - ./config.js:/yapi/config.js
+
+  mongo:
+    image: mongo
+    restart: always
+    networks:
+      - 'dev'
+    ports:
+      - 27017:27017
+#    environment:
+#      - MONGO_INITDB_ROOT_USERNAME=root
+#      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /home/docker/yapi/mongodb/data:/data/db
+      - /home/docker/yapi/mongodb/log:/var/log/mongodb
+
 networks:
   dev:
     external: true
