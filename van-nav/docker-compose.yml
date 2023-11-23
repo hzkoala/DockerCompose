@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  van-nav:
+    container_name: van-nav
+    image: mereith/van-nav:latest
+    restart: always
+    volumes:
+      - /home/docker/van-nav/data:/app/data
+    networks:
+      - dev
+    ports:
+      - 6412:6412
+networks:
+  dev:
+    external: true
