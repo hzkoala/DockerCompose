@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  twinmap:
+    image: registry.cn-zhangjiakou.aliyuncs.com/dotink/twinmap:v1.1
+    restart: always
+    volumes:
+      - /home/docker/twinmap/data:/home/docker/twinmap/twinmapData
+    networks:
+      - dev
+#    ports:
+#      - 8888:8888
+  
+networks:
+  dev:
+    external: true
