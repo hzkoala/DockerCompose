@@ -1,16 +1,18 @@
 version: '3.3'
+
 services:
   elasticsearch:
     container_name: elasticsearch
-    image: 'elasticsearch'
+    image: elasticsearch
     restart: always
     networks:
-      - 'dev'
+      - dev
     ports:
       - '9200:9200'
       - '9300:9300'
     environment:
       - discovery.type=single-node
+      
 networks:
   dev:
     external: true

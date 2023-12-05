@@ -12,9 +12,12 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       #- ./addons:/mnt/extra-addons
-      - /home/docker/odoo/packages:/usr/lib/python3/dist-packages/odoo
+      - /home/docker/odoo:/usr/lib/python3/dist-packages/odoo
     networks:
-      - 'dev'
+      - odoo
+      - dev:
+        - aliases:
+          - mysql
     environment:
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:
@@ -31,7 +34,7 @@ services:
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
     networks:
-      - 'dev'
+      - odoo
     secrets:
       - postgresql_password
       
@@ -40,6 +43,7 @@ volumes:
   odoo-db-data:
 
 networks:
+  odoo:
   dev:
     external: true
     

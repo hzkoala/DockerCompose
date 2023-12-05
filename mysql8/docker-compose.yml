@@ -1,19 +1,21 @@
 version: '3.3'
+
 services:
   mysql8:
     container_name: mysql8
     image: mysql:8
     restart: always
-    networks:
-      - 'dev'
     volumes:
-      - '/home/docker/mysql/data:/var/lib/mysql'
-      #- '/home/docker/mysql/conf/mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
-      - './mysqld.conf:/etc/mysql/conf.d/mysqld.conf'
+      - /home/docker/mysql/data:/var/lib/mysql
+      #- /home/docker/mysql/conf/mysqld.conf:/etc/mysql/conf.d/mysqld.conf
+      - ./mysqld.conf:/etc/mysql/conf.d/mysqld.conf
+    networks:
+      - dev
     environment:
       - TZ=Asia/Shanghai
       - MYSQL_ROOT_PASSWORD=root
     privileged: true
+    
 networks:
   dev:
     external: true

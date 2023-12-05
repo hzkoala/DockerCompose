@@ -1,15 +1,17 @@
 version: '3.3'
+
 services:
   home-assistant:
     container_name: home-assistant
     image: homeassistant/home-assistant
     restart: always
+    volumes:
+      - /home/docker/home-assistant/config:/config
     networks:
-      - 'dev'
+      - dev
     ports:
       - '8123:8123'
-    volumes:
-      - '/home/docker/home-assistant/config:/config'
+      
 networks:
   dev:
     external: true

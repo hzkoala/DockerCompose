@@ -1,4 +1,5 @@
 version: '3.3'
+
 services:
   van-nav:
     container_name: van-nav
@@ -10,6 +11,7 @@ services:
       - dev
     ports:
       - 6412:6412
+      
 networks:
   dev:
     external: true

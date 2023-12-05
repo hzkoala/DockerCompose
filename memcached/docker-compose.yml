@@ -1,13 +1,15 @@
 version: '3.3'
+
 services:
   memcached:
     container_name: memcached
     image: memcached
     restart: always
     networks:
-      - 'dev'
+      - dev
     ports:
       - '11211:11211'
+      
 networks:
   dev:
     external: true

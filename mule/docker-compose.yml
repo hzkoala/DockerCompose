@@ -1,12 +1,13 @@
 version: '3.3'
+
 services:
   mule:
     container_name: mule
     image: wslph/mule:3.9.0-ce
     restart: always
+    volumes:
+      - /home/docker/mule/apps:/opt/mule/apps
+      - /home/docker/mule/logs:/opt/mule/logs
     network_mode: host
     ports:
       - 8081:8081
-    volumes:
-      - '/home/docker/mule/apps:/opt/mule/apps'
-      - '/home/docker/mule/logs:/opt/mule/logs'

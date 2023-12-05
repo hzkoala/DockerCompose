@@ -5,16 +5,16 @@ services:
     container_name: clash
     image: dreamacro/clash
     restart: always
-    network_mode: "host"
     volumes:
-      - './config.yaml:/root/.config/clash/config.yaml'
+      - ./config.yaml:/root/.config/clash/config.yaml
+    network_mode: host
 
   yacd:
     container_name: yacd
     image: haishanh/yacd
     restart: always
     networks:
-      - 'dev'
+      - dev
     ports: 
       - '7892:80'
 

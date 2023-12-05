@@ -1,16 +1,18 @@
 version: '3.3'
+
 services:
   frpc:
     container_name: frpc
     image: snowdreamtech/frpc:0.51.3
     restart: always
-    networks:
-      - 'dev'
-    ports:
-      - '7400:7400'
     volumes:
       # - '/etc/frp/frpc.ini:/etc/frp/frpc.ini'
       - './frpc.ini:/etc/frp/frpc.ini'
+    networks:
+      - dev
+    ports:
+      - '7400:7400'
+      
 networks:
   dev:
     external: true

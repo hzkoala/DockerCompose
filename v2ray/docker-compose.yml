@@ -1,10 +1,12 @@
 version: '3.3'
+
 services:
   v2ray:
     container_name: v2ray
     image: teddysun/v2ray
     restart: always
-    network_mode: host
     volumes:
-      # - '/etc/v2ray/config.json:/etc/v2ray/config.json'
-      - './config.json:/etc/v2ray/config.json'
+      # - /etc/v2ray/config.json:/etc/v2ray/config.json
+      - ./config.json:/etc/v2ray/config.json
+    network_mode: host
+    

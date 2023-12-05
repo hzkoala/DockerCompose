@@ -1,20 +1,22 @@
 version: '3.3'
+
 services:
   dnsmasq:
     container_name: dnsmasq
     image: jpillora/dnsmasq
     restart: always
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
     networks:
-      - 'dev'
+      - dev
     ports:
       - '53:53'
       - '53/udp:53/udp'
       - '8083:8080'
-    volumes:
-      - './dnsmasq.conf:/etc/dnsmasq.conf'
     environment:
       - HTTP_USER=hzkoala
       - HTTP_PASS=hz1989315
+      
 networks:
   dev:
     external: true

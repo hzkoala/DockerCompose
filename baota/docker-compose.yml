@@ -1,24 +1,26 @@
 version: '3.3'
+
 services:
   baota:
     container_name: baota
     image: pch18/baota
     restart: always
     privileged: true
+    volumes:
+#      - /home/docker/baota:/www
+      - /home/docker/baota/wwwroot:/www/wwwroot
     networks:
       dev:
         aliases:
           - mysql
     ports:
 #      - '80:80'
-#      - '888:888'
+      - '888:888'
       - '8888:8888'
 #      - '443:443'
-      - '3307:3306'
-    volumes:
-#      - '/home/docker/baota:/www'
-      - '/home/docker/baota/wwwroot:/www/wwwroot'
+#      - '3307:3306'
     shm_size: '1g'
+    
 networks:
   dev:
     external: true

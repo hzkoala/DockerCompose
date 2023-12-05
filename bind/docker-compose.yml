@@ -1,17 +1,19 @@
 version: '3.3'
+
 services:
   bind:
     container_name: bind
     image: sameersbn/bind
     restart: always
+    volumes:
+      - /home/docker/bind:/data
     networks:
-      - 'dev'
+      - dev
     ports:
       - '53:53'
       - '53/udp:53/udp'
       - '10000:10000'
-    volumes:
-      - '/home/docker/bind:/data'
+      
 networks:
   dev:
     external: true

@@ -1,13 +1,15 @@
 version: '3.3'
+
 services:
   xuperunion:
     container_name: xuperunion
     image: registry.cn-beijing.aliyuncs.com/dotink/xuperunion:3.3.0
     restart: always
     networks:
-      - 'dev'
+      - dev
     ports:
       - '37101:37101'
+      
 networks:
   dev:
     external: true

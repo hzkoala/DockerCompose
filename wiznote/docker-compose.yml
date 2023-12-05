@@ -1,17 +1,19 @@
 version: '3.3'
+
 services:
   wiz:
     container_name: wiz
     image: wiznote/wizserver
     restart: always
+    volumes:
+      - /home/docker/wiz:/wiz/storage
+      - /etc/localtime:/etc/localtime
     networks:
-      - 'dev'
+      - dev
     ports:
       - '81:80'
       - '9269/udp:9269/udp'
-    volumes:
-      - '/home/docker/wiz:/wiz/storage'
-      - '/etc/localtime:/etc/localtime'
+      
 networks:
   dev:
     external: true

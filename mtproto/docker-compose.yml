@@ -1,4 +1,5 @@
 version: '3.3'
+
 services:
   mtproto-proxy:
     container_name: mtproto

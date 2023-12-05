@@ -5,7 +5,7 @@ services:
     image: mysql/mysql-server:5.6
     restart: always
     networks:
-      - dev
+      - webstack
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: webstack
@@ -17,17 +17,21 @@ services:
     image: redis:3
     restart: always
     networks:
-      - dev
+      - webstack
       
   web:
     image: arvon2014/webstack-laravel:v1.2.2
+    restart: always
     networks:
-      - dev
+      - webstack
+      - dev:
+        - alias:
+          - webstack
 #    ports:
 #      - 8000:8000
     depends_on:
-      - "db"
-      - "redis"
+      - db
+      - redis
     environment:
       LOGIN_COPTCHA: "false"
       DB_HOST: db
@@ -38,5 +42,6 @@ services:
     command: ['/entrypoint.sh','server']
 
 networks:
+  webstack:
   dev:
     external: true

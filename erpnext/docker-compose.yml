@@ -5,18 +5,18 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
   configurator:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     entrypoint:
       - bash
       - -c
@@ -39,18 +39,18 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
   create-site:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
     entrypoint:
       - bash
       - -c
@@ -90,7 +90,7 @@ services:
       retries: 15
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -101,13 +101,13 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     networks:
-      - 'dev'
+      - erpnext
 
   frontend:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - nginx-entrypoint.sh
     environment:
@@ -123,7 +123,10 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
+      - dev:
+        - alias:
+          - erpnext
 #    ports:
 #      - "80:8080"
 
@@ -131,7 +134,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - bench
       - worker
@@ -141,13 +144,13 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
   queue-long:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - bench
       - worker
@@ -157,13 +160,13 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
   queue-short:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - bench
       - worker
@@ -173,43 +176,43 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
   redis-queue:
     image: redis:6.2-alpine
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     volumes:
       - redis-queue-data:/data
     networks:
-      - 'dev'
+      - erpnext
 
   redis-cache:
     image: redis:6.2-alpine
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     volumes:
       - redis-cache-data:/data
     networks:
-      - 'dev'
+      - erpnext
 
   redis-socketio:
     image: redis:6.2-alpine
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     volumes:
       - redis-socketio-data:/data
     networks:
-      - 'dev'
+      - erpnext
 
   scheduler:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - bench
       - schedule
@@ -217,13 +220,13 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
   websocket:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: always
     command:
       - node
       - /home/frappe/frappe-bench/apps/frappe/socketio.js
@@ -231,7 +234,7 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - 'dev'
+      - erpnext
 
 volumes:
   db-data:
@@ -242,5 +245,6 @@ volumes:
   logs:
   
 networks:
+  erpnext:
   dev:
     external: true
