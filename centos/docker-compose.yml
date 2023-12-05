@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  centos:
+    image: centos:centos7.9.2009
+    container_name: centos7
+    networks:
+      dev:
+    ports:
+      - '2222:22'
+    privileged: true
+    command: /usr/sbin/init
+    
+networks:
+  dev:
+    external: true
