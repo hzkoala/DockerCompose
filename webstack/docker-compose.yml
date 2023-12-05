@@ -14,7 +14,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
       
   redis:
-    image: redis:3
+    image: redis
     restart: always
     networks:
       - webstack
