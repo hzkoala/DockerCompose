@@ -9,8 +9,8 @@ services:
       - /home/docker/jira:/var/atlassian/application-data/jira
     networks:
       - dev
-    ports:
-      - '8080:8080'
+#    ports:
+#      - 8080:8080
       
 networks:
   dev:

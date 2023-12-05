@@ -17,8 +17,8 @@ services:
     networks:
       - elk
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - 9200:9200
+      - 9300:9300
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
       ELASTIC_PASSWORD: changeme
@@ -41,10 +41,10 @@ services:
     networks:
       - elk
     ports:
-      - "5044:5044"
-      - "5000:5000/tcp"
-      - "5000:5000/udp"
-      - "9600:9600"
+      - 5044:5044
+      - 5000:5000
+      - 5000:5000/udp
+      - 9600:9600
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     depends_on:
@@ -63,7 +63,7 @@ services:
     networks:
       - elk
     ports:
-      - "5601:5601"
+      - 5601:5601
     depends_on:
       - elasticsearch
 

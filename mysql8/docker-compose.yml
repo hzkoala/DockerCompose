@@ -11,6 +11,8 @@ services:
       - ./mysqld.conf:/etc/mysql/conf.d/mysqld.conf
     networks:
       - dev
+    ports:
+      - 3306:3306
     environment:
       - TZ=Asia/Shanghai
       - MYSQL_ROOT_PASSWORD=root

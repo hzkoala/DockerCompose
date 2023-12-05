@@ -10,16 +10,15 @@ services:
 #      - /home/docker/baota:/www
       - /home/docker/baota/wwwroot:/www/wwwroot
     networks:
-      dev:
-        aliases:
-          - mysql
+      - dev
+
     ports:
-#      - '80:80'
-      - '888:888'
-      - '8888:8888'
-#      - '443:443'
-#      - '3307:3306'
-    shm_size: '1g'
+#      - 80:80
+      - 888:888
+      - 8888:8888
+#      - 443:443
+#      - 3307:3306
+    shm_size: 1g
     
 networks:
   dev:

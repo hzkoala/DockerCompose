@@ -7,7 +7,7 @@ services:
     networks:
       dev:
     ports:
-      - '2222:22'
+      - 2222:22
     privileged: true
     command: /usr/sbin/init
     

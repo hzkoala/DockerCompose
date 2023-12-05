@@ -5,12 +5,12 @@ services:
     container_name: bonita
     image: bonita
     restart: always
-    networks:
-      - dev
-    ports:
-      - '8001:8080'
     volumes:
       - /home/docker/bonita:/opt/bonita
+    networks:
+      - dev
+#    ports:
+#      - 8001:8080
     environment:
       - DB_VENDOR=mysql
       - DB_HOST=baota

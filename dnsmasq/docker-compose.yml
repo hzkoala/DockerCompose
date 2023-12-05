@@ -10,9 +10,8 @@ services:
     networks:
       - dev
     ports:
-      - '53:53'
-      - '53/udp:53/udp'
-      - '8083:8080'
+      - 53:53/udp
+#      - 8083:8080
     environment:
       - HTTP_USER=hzkoala
       - HTTP_PASS=hz1989315

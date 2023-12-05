@@ -7,8 +7,8 @@ services:
     restart: always
     networks:
       - dev
-    ports:
-      - '8888:8888'
+#    ports:
+#      - 8888:8888
       
 networks:
   dev:

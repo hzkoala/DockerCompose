@@ -16,7 +16,7 @@ services:
     networks:
       - dev
     ports: 
-      - '7892:80'
+      - 7892:80
 
 networks:
   dev:

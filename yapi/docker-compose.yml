@@ -7,12 +7,12 @@ services:
     volumes:
       - ./config.js:/yapi/config.js
     networks:
-      - yapi
-      - dev:
-        - alias:
+      yapi:
+      dev:
+        aliases:
           - yapi
-    ports:
-      - 3000:3000
+#    ports:
+#      - 3000:3000
 
   mongo:
     image: mongo
@@ -23,11 +23,11 @@ services:
       - /home/docker/yapi/mongodb/log:/var/log/mongodb
     networks:
       - yapi
-    ports:
-      - 27017:27017
-#    environment:
-#      - MONGO_INITDB_ROOT_USERNAME=root
-#      - MONGO_INITDB_ROOT_PASSWORD=root
+#    ports:
+#      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
 
 networks:
   yapi:

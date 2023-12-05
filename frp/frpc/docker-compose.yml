@@ -6,12 +6,12 @@ services:
     image: snowdreamtech/frpc:0.51.3
     restart: always
     volumes:
-      # - '/etc/frp/frpc.ini:/etc/frp/frpc.ini'
-      - './frpc.ini:/etc/frp/frpc.ini'
+#      - /etc/frp/frpc.ini:/etc/frp/frpc.ini
+      - ./frpc.ini:/etc/frp/frpc.ini
     networks:
       - dev
     ports:
-      - '7400:7400'
+      - 7400:7400
       
 networks:
   dev:

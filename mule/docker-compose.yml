@@ -9,5 +9,3 @@ services:
       - /home/docker/mule/apps:/opt/mule/apps
       - /home/docker/mule/logs:/opt/mule/logs
     network_mode: host
-    ports:
-      - 8081:8081

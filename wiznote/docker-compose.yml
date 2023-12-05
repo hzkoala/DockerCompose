@@ -10,9 +10,9 @@ services:
       - /etc/localtime:/etc/localtime
     networks:
       - dev
-    ports:
-      - '81:80'
-      - '9269/udp:9269/udp'
+#    ports:
+#      - 81:80
+#      - 9269:9269/udp
       
 networks:
   dev:

@@ -23,12 +23,12 @@ services:
     image: arvon2014/webstack-laravel:v1.2.2
     restart: always
     networks:
-      - webstack
-      - dev:
-        - alias:
+      webstack:
+      dev:
+        aliases:
           - webstack
 #    ports:
-#      - 8000:8000
+#      - 8001:8000
     depends_on:
       - db
       - redis

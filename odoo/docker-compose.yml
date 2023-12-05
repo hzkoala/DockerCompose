@@ -1,23 +1,24 @@
 version: '3.1'
+
 services:
   web:
     image: odoo:16.0
     restart: always
     depends_on:
       - db
-    ports:
-      - "8069:8069"
-      - "50162:50162"
+#    ports:
+#      - "8069:8069"
+#      - "50162:50162"
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       #- ./addons:/mnt/extra-addons
-      - /home/docker/odoo:/usr/lib/python3/dist-packages/odoo
+      - /home/docker/odoo/packages:/usr/lib/python3/dist-packages/odoo
     networks:
-      - odoo
-      - dev:
-        - aliases:
-          - mysql
+      odoo:
+      dev:
+        aliases:
+          - odoo
     environment:
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:

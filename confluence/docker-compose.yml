@@ -9,9 +9,9 @@ services:
       - /home/docker/confluence:/var/atlassian/application-data/confluence
     networks:
       - dev
-    ports:
-      - '8090:8090'
-      - '8091:8091'
+#    ports:
+#      - 8090:8090
+#      - 8091:8091
       
 networks:
   dev:

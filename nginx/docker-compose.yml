@@ -10,12 +10,6 @@ services:
       - /home/docker/nginx/logs:/etc/nginx/logs
       #- /home/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx.conf:/etc/nginx/nginx.conf
-    networks:
-      - dev
-    ports:
-      - '80:80'
+    network_mode: host
     privileged: true
     
-networks:
-  dev:
-    external: true

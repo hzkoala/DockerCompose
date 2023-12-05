@@ -10,8 +10,8 @@ services:
       - /home/docker/wallabag/images:/var/www/wallabag/web/assets/images
     networks:
       - dev
-    ports:
-      - '88:80'
+#    ports:
+#      - 88:80
     environment:
       #- 'SYMFONY__ENV__DOMAIN_NAME=http://localhost:88'
       #- 'SYMFONY__ENV__DOMAIN_NAME=http://192.168.33.10:88'

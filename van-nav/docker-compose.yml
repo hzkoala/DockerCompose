@@ -9,8 +9,8 @@ services:
       - /home/docker/van-nav/data:/app/data
     networks:
       - dev
-    ports:
-      - 6412:6412
+#    ports:
+#      - 6412:6412
       
 networks:
   dev:

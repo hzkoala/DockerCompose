@@ -9,8 +9,8 @@ services:
       - /home/docker/home-assistant/config:/config
     networks:
       - dev
-    ports:
-      - '8123:8123'
+#    ports:
+#      - 8123:8123
       
 networks:
   dev:

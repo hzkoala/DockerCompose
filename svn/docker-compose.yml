@@ -10,7 +10,7 @@ services:
     networks:
       - dev
     ports:
-      - '3690:3690'
+      - 3690:3690
       
 networks:
   dev:

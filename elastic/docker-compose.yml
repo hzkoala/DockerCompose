@@ -7,9 +7,9 @@ services:
     restart: always
     networks:
       - dev
-    ports:
-      - '9200:9200'
-      - '9300:9300'
+#    ports:
+#      - 9200:9200
+#      - 9300:9300
     environment:
       - discovery.type=single-node
       

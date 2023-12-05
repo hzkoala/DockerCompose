@@ -95,7 +95,7 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
       - --skip-character-set-client-handshake
-      - --skip-innodb-read-only-compressed # Temporary fix for MariaDB 10.6
+      - --skip-innodb-read-only-compressed
     environment:
       MYSQL_ROOT_PASSWORD: admin
     volumes:
@@ -123,12 +123,12 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     networks:
-      - erpnext
-      - dev:
-        - alias:
+      erpnext:
+      dev:
+        aliases:
           - erpnext
-#    ports:
-#      - "80:8080"
+    ports:
+      - 80:8080
 
   queue-default:
     image: szufisher/erpnext_oob:v14.0.2

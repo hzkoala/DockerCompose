@@ -10,10 +10,10 @@ services:
       - /home/docker/gitlab:/var/opt/gitlab
     networks:
       - dev
-    ports:
-      - '1022:22'
-      - '1080:80'
-      - '1443:443'
+#    ports:
+#      - 1022:22
+#      - 1080:80
+#      - 1443:443
       
 networks:
   dev:
