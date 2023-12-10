@@ -5,7 +5,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
@@ -16,7 +16,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     entrypoint:
       - bash
       - -c
@@ -45,7 +45,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
@@ -90,7 +90,7 @@ services:
       retries: 15
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -107,7 +107,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - nginx-entrypoint.sh
     environment:
@@ -134,7 +134,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - bench
       - worker
@@ -150,7 +150,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - bench
       - worker
@@ -166,7 +166,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - bench
       - worker
@@ -182,7 +182,7 @@ services:
     image: redis:6.2-alpine
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     volumes:
       - redis-queue-data:/data
     networks:
@@ -192,7 +192,7 @@ services:
     image: redis:6.2-alpine
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     volumes:
       - redis-cache-data:/data
     networks:
@@ -202,7 +202,7 @@ services:
     image: redis:6.2-alpine
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     volumes:
       - redis-socketio-data:/data
     networks:
@@ -212,7 +212,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - bench
       - schedule
@@ -226,7 +226,7 @@ services:
     image: szufisher/erpnext_oob:v14.0.2
     deploy:
       restart_policy:
-        condition: always
+        condition: any
     command:
       - node
       - /home/frappe/frappe-bench/apps/frappe/socketio.js
