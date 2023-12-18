@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  nps:
+    container_name: nps
+    image: ffdfgdfg/nps
+    restart: always
+    volumes:
+      - /home/docker/nps/conf:/conf
+#      - ./conf:/conf
+    network_mode: host
