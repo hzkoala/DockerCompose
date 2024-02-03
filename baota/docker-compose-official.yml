@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  baota:
+    container_name: baota
+    image: btpanel/baota:lnmp
+    restart: always
+    privileged: true
+    volumes:
+      - /home/docker/baota/wwwroot:/www/wwwroot
+      - /home/docker/baota/data:/www/server/data
+      - /home/docker/baota/vhost:/www/server/panel/vhost
+    networks:
+      - dev
+    ports:
+#      - 80:80
+      - 888:888
+      - 8888:8888
+#      - 443:443
+#      - 3307:3306
+    shm_size: 1g
+
+networks:
+  dev:
+    external: true
