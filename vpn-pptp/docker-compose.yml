@@ -1,11 +1,12 @@
-version: 3.3
-name: vpn-pptp
+version: '3.3'
+
 services:
   vpn-pptp:
     container_name: vpn-pptp
     image: mobtitude/vpn-pptp
     restart: always
     privileged: true
+    network_mode: host
     ports:
       - 1723:1723
     volumes:
