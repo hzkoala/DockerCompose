@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  x-ui:
+    container_name: x-ui
+    image: enwaiax/x-ui
+    restart: always
+    network_mode: host
+    volumes:
+      - /home/docker/x-ui/db/:/etc/x-ui/
+      - /home/docker/x-ui/cert/:/root/cert/
