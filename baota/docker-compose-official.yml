@@ -4,7 +4,7 @@ services:
   baota:
     container_name: baota
     image: btpanel/baota:lnmp
-    restart: always
+    restart: unless-stopped
     privileged: true
     volumes:
       - /home/docker/baota/wwwroot:/www/wwwroot

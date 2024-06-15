@@ -4,7 +4,7 @@ services:
   bind:
     container_name: bind
     image: sameersbn/bind
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/bind:/data
     networks:

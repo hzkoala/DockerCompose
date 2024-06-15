@@ -4,7 +4,7 @@ services:
   jira:
     container_name: jira
     image: atlassian/jira-software
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/jira:/var/atlassian/application-data/jira
     networks:

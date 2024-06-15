@@ -4,7 +4,7 @@ services:
   vsftpd:
     container_name: vsftpd
     image: fauria/vsftpd
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/vsftpd:/home/vsftpd
     networks:

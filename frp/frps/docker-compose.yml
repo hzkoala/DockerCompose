@@ -4,7 +4,7 @@ services:
   frps:
     container_name: frps
     image: snowdreamtech/frps:0.51.3
-    restart: always
+    restart: unless-stopped
     volumes:
 #      - /etc/frp/frps.ini:/etc/frp/frps.ini
       - ./frps.ini:/etc/frp/frps.ini

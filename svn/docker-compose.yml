@@ -4,7 +4,7 @@ services:
   svn:
     container_name: svn
     image: psgarethflowers/svn-server
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/svn:/var/opt/svn
     networks:

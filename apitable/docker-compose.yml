@@ -4,7 +4,7 @@ services:
   apitable:
     container_name: apitable
     image: apitable/all-in-one:latest
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/apitable:/apitable
     networks:

@@ -4,7 +4,7 @@ services:
   openfire:
     container_name: openfire
     image: gizmotronic/openfire:4.3.2
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/openfire:/var/lib/openfire
     networks:

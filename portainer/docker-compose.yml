@@ -4,7 +4,7 @@ services:
   portainer:
     container_name: portainer
     image: portainer/portainer:1.24.2
-    restart: always
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/docker/portainer:/data

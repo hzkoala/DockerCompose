@@ -4,7 +4,7 @@ services:
   home-assistant:
     container_name: home-assistant
     image: homeassistant/home-assistant
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/home-assistant/config:/config
     networks:

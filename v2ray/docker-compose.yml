@@ -4,7 +4,7 @@ services:
   v2ray:
     container_name: v2ray
     image: teddysun/v2ray
-    restart: always
+    restart: unless-stopped
     volumes:
       # - /etc/v2ray/config.json:/etc/v2ray/config.json
       - ./config.json:/etc/v2ray/config.json

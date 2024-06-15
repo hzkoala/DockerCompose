@@ -4,7 +4,7 @@ services:
   elasticsearch:
     container_name: elasticsearch
     image: elasticsearch
-    restart: always
+    restart: unless-stopped
     networks:
       - dev
 #    ports:

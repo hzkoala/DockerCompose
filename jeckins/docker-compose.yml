@@ -4,7 +4,7 @@ services:
   jenkins:
     container_name: jenkins
     image: jenkins
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/jenkins:/var/jenkins_home
     networks:

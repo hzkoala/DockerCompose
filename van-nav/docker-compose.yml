@@ -4,7 +4,7 @@ services:
   van-nav:
     container_name: van-nav
     image: mereith/van-nav:latest
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/van-nav/data:/app/data
     networks:

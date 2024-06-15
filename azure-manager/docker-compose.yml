@@ -4,7 +4,7 @@ services:
   azure-manager:
     container_name: azure-manager
     image: 1injex/azure-manager
-    restart: always
+    restart: unless-stopped
     networks:
       - dev
 #    ports:

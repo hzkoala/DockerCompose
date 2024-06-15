@@ -4,7 +4,7 @@ services:
   mule:
     container_name: mule
     image: wslph/mule:3.9.0-ce
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/mule/apps:/opt/mule/apps
       - /home/docker/mule/logs:/opt/mule/logs

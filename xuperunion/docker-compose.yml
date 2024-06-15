@@ -4,7 +4,7 @@ services:
   xuperunion:
     container_name: xuperunion
     image: registry.cn-beijing.aliyuncs.com/dotink/xuperunion:3.3.0
-    restart: always
+    restart: unless-stopped
     networks:
       - dev
     ports:

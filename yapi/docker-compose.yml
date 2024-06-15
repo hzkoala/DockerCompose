@@ -3,7 +3,7 @@ version: '3.3'
 services:
   web:
     image: jayfong/yapi
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./config.js:/yapi/config.js
     networks:
@@ -16,7 +16,7 @@ services:
 
   mongo:
     image: mongo
-    restart: always
+    restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime
       - /home/docker/yapi/mongodb/data:/data/db

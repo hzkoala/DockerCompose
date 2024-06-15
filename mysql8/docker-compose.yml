@@ -4,7 +4,7 @@ services:
   mysql8:
     container_name: mysql8
     image: mysql:8
-    restart: always
+    restart: unless-stopped
     volumes:
       - /home/docker/mysql/data:/var/lib/mysql
       #- /home/docker/mysql/conf/mysqld.conf:/etc/mysql/conf.d/mysqld.conf
