@@ -8,4 +8,5 @@ services:
     network_mode: host
     volumes:
       - /home/docker/x-ui/db/:/etc/x-ui/
-      - /home/docker/x-ui/cert/:/root/cert/
+#      - /home/docker/x-ui/cert/:/root/cert/
+      - /etc/trojan-go/:/root/cert/
