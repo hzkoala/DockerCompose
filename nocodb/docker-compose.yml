@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  nocodb:
+    container_name: nocodb
+    image: nocodb/nocodb:latest
+    restart: unless-stopped
+    volumes:
+      - /home/docker/nocodb/data:/usr/app/data
+    networks:
+      - dev
+    ports:
+      - 8080:8080
+
+networks:
+  dev:
+    external: true

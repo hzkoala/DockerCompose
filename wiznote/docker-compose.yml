@@ -6,6 +6,7 @@ services:
     image: wiznote/wizserver
     restart: unless-stopped
     volumes:
+      - ./wiznote.conf:/etc/wiznote/wiznote.conf
       - /home/docker/wiz:/wiz/storage
       - /etc/localtime:/etc/localtime
     networks:
@@ -13,7 +14,7 @@ services:
 #    ports:
 #      - 81:80
 #      - 9269:9269/udp
-      
+
 networks:
   dev:
     external: true
