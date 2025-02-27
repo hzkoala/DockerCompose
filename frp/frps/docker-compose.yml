@@ -9,4 +9,7 @@ services:
 #      - /etc/frp/frps.ini:/etc/frp/frps.ini
       - ./frps.ini:/etc/frp/frps.ini
     network_mode: host
-    
+    deploy:
+      resources:
+        limits:
+          memory: 256M

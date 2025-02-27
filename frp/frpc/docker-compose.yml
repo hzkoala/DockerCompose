@@ -12,7 +12,11 @@ services:
       - dev
     ports:
       - 7400:7400
-      
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
 networks:
   dev:
     external: true
