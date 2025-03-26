@@ -6,7 +6,6 @@ services:
     image: wiznote/wizserver
     restart: unless-stopped
     volumes:
-      - ./wiznote.conf:/etc/wiznote/wiznote.conf
       - /home/docker/wiz:/wiz/storage
       - /etc/localtime:/etc/localtime
     networks:
