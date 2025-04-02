@@ -1,0 +1,19 @@
+bindAddr = "0.0.0.0"
+bindPort = 7000
+
+vhostHTTPPort = 80
+vhostHTTPSPort = 443
+
+auth.method = "token"
+auth.token = "hz1989315"
+
+webServer.addr = "0.0.0.0"
+webServer.port = 7500
+webServer.user = "hzkoala"
+webServer.password = "hz1989315"
+
+# tls
+#transport.tls.force = true
+#transport.tls.certFile = "/etc/frp/ssl/server.crt"
+#transport.tls.keyFile = "/etc/frp/ssl/server.key"
+#transport.tls.trustedCaFile = "/etc/frp/ssl/ca.crt"

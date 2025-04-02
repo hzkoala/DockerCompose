@@ -1,0 +1,31 @@
+serverAddr = "127.0.0.1"
+serverPort = 7000
+
+auth.method = "token"
+auth.token = "hz1989315"
+
+webServer.addr = "0.0.0.0"
+webServer.port = 7400
+webServer.user = "hzkoala"
+webServer.password = "hz1989315"
+webServer.pprofEnable = false
+
+
+# tls
+#transport.tls.certFile = "/etc/frp/ssl/client.crt"
+#transport.tls.keyFile = "/etc/frp/ssl/client.key"
+#transport.tls.trustedCaFile = "/etc/frp/ssl/ca.crt"
+
+[[proxies]]
+name = "http_*"
+type = "http"
+localIP = "127.0.0.1"
+localPort = 10080
+customDomains = ["*"]
+
+[[proxies]]
+name = "https_*"
+type = "https"
+localIP = "127.0.0.1"
+localPort = 10443
+customDomains = ["*"]
