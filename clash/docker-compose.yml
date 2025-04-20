@@ -15,8 +15,8 @@ services:
     restart: unless-stopped
     networks:
       - dev
-    ports: 
-      - 7892:80
+    ports:
+      - 7880:80
 
 networks:
   dev:
