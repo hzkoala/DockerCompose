@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   clash:
@@ -6,7 +6,7 @@ services:
     image: dreamacro/clash
     restart: unless-stopped
     volumes:
-      - ./config.yaml:/root/.config/clash/config.yaml
+      - /home/docker/clash/clash_config/config.yaml:/root/.config/clash/config.yaml
     network_mode: host
 
   yacd:
