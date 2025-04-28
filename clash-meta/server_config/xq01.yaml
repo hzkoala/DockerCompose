@@ -1,0 +1,88 @@
+mixed-port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+secret: hz1989315
+dns:
+  enable: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies:
+  - {name: 🇸🇬 新加坡3-hy2 协议, server: sg3.xiaoliyu.cyou, port: 23231, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇸🇬 新加坡4-hy2 协议, server: cdn.dukadi.one, port: 48081, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡5-hy2 协议, server: sg5.xiaoliyu.cyou, port: 26462, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇸🇬 新加坡6-hy2 协议, server: sg6.xiaoliyu.cyou, port: 24066, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇳🇱 荷兰1-hy2  协议, server: nl1.xiaoliyu.cyou, port: 26129, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇰🇷 韩国1-hy2  协议, server: kr1.xiaoliyu.cyou, port: 24411, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇰🇷 韩国2-hy2  协议, server: kr2.xiaoliyu.cyou, port: 25391, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇦🇺 澳大利亚1-hy2 协议, server: au1.xiaoliyu.cyou, port: 23058, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇦🇺 澳大利亚2-hy2 协议, server: au2.xiaoliyu.cyou, port: 24260, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇮🇳 印度1-hy2  协议, server: ln1.xiaoliyu.cyou, port: 26517, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇮🇳 印度3-hy2  协议, server: ln3.xiaoliyu.cyou, port: 26849, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇮🇳 印度4-hy2  协议, server: ln4.xiaoliyu.cyou, port: 24175, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇧🇷 巴西1-hy2 协议, server: br1.xiaoliyu.cyou, port: 24571, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇩🇪 德国1-hy2  协议, server: de1.xiaoliyu.cyou, port: 26425, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇩🇪 德国2-hy2 协议, server: de2.xiaoliyu.cyou, port: 24464, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇩🇪 德国3-hy2 协议, server: de3.xiaoliyu.cyou, port: 22756, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇫🇷 法国2-hy2  协议, server: fr2.xiaoliyu.cyou, port: 25108, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇫🇷 法国3-hy2  协议, server: fr3.xiaoliyu.cyou, port: 25157, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇬🇧 英国1-hy2  协议, server: gb1.xiaoliyu.cyou, port: 25701, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇺🇸 美国2-hy2  协议, server: us2.xiaoliyu.cyou, port: 23970, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇪🇸 西班牙1-hy2 协议, server: es1.xiaoliyu.cyou, port: 25445, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇺🇸 美国1-hy2  协议, server: us1.xiaoliyu.cyou, port: 22175, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇺🇸 美国3-hy2  协议, server: us3.xiaoliyu.cyou, port: 22725, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+  - {name: 🇺🇸 美国4-hy2  协议, server: us4.xiaoliyu.cyou, port: 24851, client-fingerprint: chrome, type: hysteria2, password: 8b7df5b3-6860-486d-922f-a27b463c11b3, auth: 8b7df5b3-6860-486d-922f-a27b463c11b3, skip-cert-verify: false, ports: 22000-27000}
+proxy-groups:
+  - name: ⚖️ 负载均衡
+    type: load-balance
+    url: 'http://www.google.com/generate_204'
+    interval: 300
+    strategy: round-robin
+    proxies:
+      - DIRECT
+      - 🇸🇬 新加坡3-hy2 协议
+      - 🇸🇬 新加坡6-hy2 协议
+      - 🇳🇱 荷兰1-hy2  协议
+      - 🇰🇷 韩国1-hy2  协议
+      - 🇦🇺 澳大利亚1-hy2 协议
+      - 🇮🇳 印度1-hy2  协议
+      - 🇮🇳 印度4-hy2  协议
+      - 🇧🇷 巴西1-hy2 协议
+      - 🇩🇪 德国1-hy2  协议
+      - 🇩🇪 德国2-hy2 协议
+      - 🇩🇪 德国3-hy2 协议
+      - 🇫🇷 法国2-hy2  协议
+      - 🇫🇷 法国3-hy2  协议
+      - 🇬🇧 英国1-hy2  协议
+      - 🇺🇸 美国2-hy2  协议
+      - 🇪🇸 西班牙1-hy2 协议
+      - 🇺🇸 美国1-hy2  协议
+      - 🇺🇸 美国3-hy2  协议
+      - 🇺🇸 美国4-hy2  协议
+rules:
+  - DOMAIN-SUFFIX,ip6-localhost,DIRECT
+  - DOMAIN-SUFFIX,ip6-loopback,DIRECT
+  - DOMAIN-SUFFIX,lan,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,localhost,DIRECT
+  - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,198.18.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fd00::/8,DIRECT,no-resolve
+  - MATCH,⚖️ 负载均衡

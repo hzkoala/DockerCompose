@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  clash:
+    container_name: clash-meta
+    image: metacubex/mihomo
+    restart: unless-stopped
+    pid: host
+    ipc: host
+    network_mode: host
+    cap_add:
+      - ALL
+    security_opt:
+      - apparmor=unconfined
+    volumes:
+      - /home/docker/clash_meta/clash_config:/root/.config/mihomo
+      - /dev/net/tun:/dev/net/tun
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+  metacubexd:
+    container_name: metacubexd
+    image: ghcr.io/metacubex/metacubexd
+    restart: unless-stopped
+    volumes:
+      - /home/docker/clash_meta/caddy_config:/config/caddy
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - dev
+    ports:
+      - 7880:80
+
+networks:
+  dev:
+    external: true
