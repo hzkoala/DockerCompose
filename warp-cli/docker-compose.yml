@@ -1,0 +1,8 @@
+services:
+    warp-cli:
+        ports:
+            - 40000:40000
+        environment:
+            - LICENSE=
+        restart: unless-stopped
+        image: zenexas/warp-cli:latest
