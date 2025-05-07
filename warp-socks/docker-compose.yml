@@ -1,0 +1,21 @@
+name: warp-socks
+services:
+    warp-socks:
+        #privileged: true
+        restart: always
+        stdin_open: true
+        tty: true
+        container_name: warp-socks
+        environment:
+            - WGCF_LICENSE_KEY=${KEY}
+        cap_add:
+            - NET_ADMIN
+            - SYS_MODULE
+        sysctls:
+            - net.ipv6.conf.all.disable_ipv6=0
+            - net.ipv4.conf.all.src_valid_mark=1
+        volumes:
+            - /lib/modules:/lib/modules
+        ports:
+            - 9091:9091
+        image: monius/docker-warp-socks
