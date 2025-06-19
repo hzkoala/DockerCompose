@@ -1,0 +1,19 @@
+name: wiznote
+services:
+  wiznote:
+    image: ikiwicc/wiznote:latest
+    container_name: wiznote
+    hostname: wiznote
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+      - SEARCH=true
+    logging:
+      options:
+        max-size: 10m
+    volumes:
+      - /home/docker/wiz:/wiz/storage
+      - /etc/localtime:/etc/localtime
+    ports:
+      - 81:80
+      - 9269:9269/udp
